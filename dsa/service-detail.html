@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Service Details</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1 id="title"></h1>
+<p id="desc"></p>
+
+<a href="contact.html" class="btn">Book This Service</a>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const service = params.get("service");
+
+const data = {
+plumbing:"Pipe repairs, leak fixing, bathroom fittings.",
+ac:"AC installation, servicing and gas refill.",
+cleaning:"Home, kitchen, bathroom deep cleaning.",
+electrician:"Wiring, lighting, repairs.",
+car:"Interior & exterior car detailing."
+};
+
+document.getElementById("title").innerText =
+service.toUpperCase();
+
+document.getElementById("desc").innerText =
+data[service];
+</script>
+
+</body>
+</html>
